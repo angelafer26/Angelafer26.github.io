@@ -5,11 +5,11 @@ Nessun build, nessuna dipendenza: `index.html` + `assets/styles.css`.
 
 ## Modificare i contenuti
 
-- Testi e sezioni: `index.html`. Ogni sezione è un blocco `<section id="…">`; le linguette a destra (`#tabs`) e il menu mobile (`.topnav`) elencano gli stessi id.
-- Stile: `assets/styles.css`. I colori sono in `:root` (`--lime`, `--leaf` sono quelli del logo).
-- Foto: `assets/`. Sostituire `angela.jpg`, `sayed.jpg`, `cascina.jpg` con gli originali mantenendo il nome.
-- Il modulo "Prenota" apre il programma di posta del visitatore con una mail già compilata per `info@ivett.it`; l'indirizzo è nello `<script>` in fondo a `index.html` e nel footer.
-- Il link a Piantami è il bottone "scopri Piantami: clicca qui" (`https://piantami.com`).
+- Testi e sezioni: `index.html`. Ogni sezione è un blocco `<section id="…">`; il menu in alto (`.nav`) elenca gli stessi id.
+- Stile: `assets/styles.css`. Colori e font in `:root` (`--lime`, `--dark`, `--green`; Barlow Condensed + DM Sans da Google Fonts).
+- Foto: `assets/` (`team.jpg`, `cascina.webp` + `tommaso.webp`, `piantami.png`, `logo.png`, `logo-nav.png`). Sostituire mantenendo il nome.
+- Il modulo "Prenota" (calendario + contatti) apre il programma di posta del visitatore con una mail già compilata per `info@ivett.it`; l'indirizzo è nello `<script>` in fondo a `index.html` e nel footer.
+- Il link a Piantami è "Scopri Piantami ↗" (`https://piantami.com`).
 
 ## Pubblicare
 
