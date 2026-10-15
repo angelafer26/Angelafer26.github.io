@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LESA — L'acqua giusta. Al momento giusto.</title>
+<meta name="description" content="LESA è un sistema di sensori a basso costo che misura l'umidità del suolo dove vivono le radici, prevede la pioggia e dice agli agricoltori quando irrigare.">
+<link rel="icon" href="assets/goccia.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<div id="grain" aria-hidden="true"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="wob" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="11" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="1.7"/>
+    </filter>
+    <filter id="wc1" x="-35%" y="-35%" width="170%" height="170%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="24"/>
+      <feGaussianBlur stdDeviation="0.8"/>
+    </filter>
+    <filter id="wc2" x="-35%" y="-35%" width="170%" height="170%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="4" seed="21" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="30"/>
+      <feGaussianBlur stdDeviation="1.4"/>
+    </filter>
+    <path id="stampArc" d="M50 13 a37 37 0 1 1 -0.02 0" fill="none"/>
+  </defs>
+</svg>
+
+<nav id="tabs" aria-label="Sezioni">
+  <a href="#cover">inizio</a><a href="#problema">problema</a><a href="#soluzione">soluzione</a>
+  <a href="#fraschina">Fraschina</a><a href="#mercato">mercato</a><a href="#roadmap">roadmap</a>
+  <a href="#team">team</a><a href="#piantami">Piantami</a><a href="#prenota">prenota</a>
+</nav>
+
+<div class="page">
+<div class="marginline" aria-hidden="true"></div>
+
+<!-- ================= COPERTINA ================= -->
+<header class="cover" id="cover">
+  <div class="washcov" aria-hidden="true">
+    <svg viewBox="0 0 900 560" preserveAspectRatio="xMidYMid slice">
+      <g class="wshift1" filter="url(#wc1)"><ellipse cx="290" cy="250" rx="270" ry="180" fill="rgba(163,198,19,.16)"/></g>
+      <g class="wshift2" filter="url(#wc2)"><ellipse cx="560" cy="350" rx="300" ry="180" fill="rgba(198,139,63,.13)"/></g>
+      <g class="wshift1" filter="url(#wc1)"><ellipse cx="430" cy="130" rx="130" ry="80" fill="rgba(93,127,141,.12)"/></g>
+    </svg>
+  </div>
+
+  <div class="cov-top reveal inview">
+    <p class="kicker">LESA · Low-cost Soil Sensor Array</p>
+    <p class="kicker hand">Bologna · quaderno di campo, 2026</p>
+  </div>
+  <nav class="topnav" aria-label="Sezioni">
+    <a href="#problema">Il problema</a><a href="#soluzione">La soluzione</a><a href="#fraschina">Cascina Fraschina</a>
+    <a href="#mercato">Mercato</a><a href="#roadmap">Roadmap</a><a href="#team">Team</a><a href="#piantami">Piantami</a><a href="#prenota">Prenota</a>
+  </nav>
+
+  <div class="cov-grid">
+    <div class="cov-left reveal inview">
+      <h1>Ogni goccia <em>conta</em>.</h1>
+      <svg class="h-underline" viewBox="0 0 300 18" aria-hidden="true">
+        <path class="draw" pathLength="1" style="--dd:.5s;--du:1.6s" d="M3 9 C50 4 105 14 152 8 C200 3 258 6 297 9"/>
+        <path class="draw p" pathLength="1" style="--dd:1s;--du:1.2s" d="M12 14 C70 10 140 17 210 12 C245 10 272 11 290 13"/>
+      </svg>
+      <p class="cov-sub">LESA la ascolta. L'acqua giusta, al momento giusto.</p>
+      <p class="cov-body">LESA è un sistema di sensori a basso costo che misura l'umidità del suolo dove vivono le radici, legge la pressione atmosferica e prevede la pioggia. Il risultato è una sola, semplice notifica: <i>irriga ora</i>, oppure <i>aspetta</i>. Niente Wi-Fi, niente abbonamenti, si alimenta col sole.</p>
+      <div class="cov-meta">4 km di portata · 7 giorni senza sole · meno di 50 € per unità</div>
+      <div class="cov-note">
+        <svg viewBox="0 0 44 34" aria-hidden="true">
+          <path class="draw r" pathLength="1" style="--dd:1.4s" d="M42 4 C34 16 22 24 6 29"/>
+          <path class="draw r" pathLength="1" style="--dd:1.9s" d="M6 29 l1 -9 M6 29 l9 -2"/>
+        </svg>
+        <span>agricoltore, investitore o curioso? <a href="#prenota">prenota una chiamata</a></span>
+      </div>
+    </div>
+
+    <div class="cov-art reveal inview">
+      <figure class="note logo-card lift">
+        <span class="tape" aria-hidden="true"></span>
+        <img src="assets/logo.png" alt="LESA — Low-cost Environment Solution Array" width="865" height="315">
+        <figcaption>il nostro marchio, appuntato qui</figcaption>
+      </figure>
+      <div class="cov-sketch" aria-hidden="true">
+        <svg viewBox="0 0 380 240" filter="url(#wob)">
+          <!-- cloud + rain -->
+          <path class="draw b" pathLength="1" style="--dd:.6s" d="M250 60 C240 40 268 28 282 42 C290 24 326 28 326 50 C344 46 352 72 334 76 L256 76 C242 76 238 62 250 60 Z"/>
+          <path class="draw b" pathLength="1" style="--dd:1.4s;stroke-width:1.3" d="M268 90 l-5 12 M292 90 l-5 12 M316 90 l-5 12 M280 108 l-5 12 M304 108 l-5 12"/>
+          <!-- ground line + soil layers -->
+          <path class="draw" pathLength="1" style="--dd:.3s;--du:1.6s;stroke-width:1.9" d="M10 150 C80 146 150 152 220 148 C290 144 340 150 372 148"/>
+          <path class="draw p" pathLength="1" style="--dd:1s" d="M20 180 C90 176 160 184 230 180 C300 176 340 182 366 180 M30 212 C100 208 170 216 240 212 C300 208 340 214 360 212"/>
+          <!-- stake sensor -->
+          <path class="draw" pathLength="1" style="--dd:.8s;--du:1.4s;stroke-width:2.2" d="M150 108 L152 232"/>
+          <path class="draw" pathLength="1" style="--dd:1.2s" d="M140 108 h22 v-22 h-22 Z"/>
+          <path class="draw g" pathLength="1" style="--dd:1.8s;stroke-width:2" d="M144 168 h16 M144 196 h16 M144 224 h16"/>
+          <!-- lora arcs -->
+          <path class="draw r" pathLength="1" style="--dd:2.1s;stroke-width:1.3" d="M170 96 C176 90 176 82 170 76 M180 102 C190 92 190 80 180 70 M190 108 C204 94 204 78 190 64"/>
+          <!-- sprout -->
+          <path class="draw g" pathLength="1" style="--dd:1.5s;stroke-width:1.8" d="M72 150 C72 134 74 120 76 106"/>
+          <path class="draw g" pathLength="1" style="--dd:2s" d="M76 118 C62 118 54 108 56 98 C68 98 78 106 76 118 Z M76 110 C90 110 98 100 96 90 C84 90 74 98 76 110 Z"/>
+          <path class="draw p" pathLength="1" style="--dd:2.3s" d="M72 150 C66 164 60 172 50 180 M72 150 C78 166 86 176 96 184 M72 152 C72 170 70 190 72 206"/>
+          <!-- drop -->
+          <path class="draw b" pathLength="1" style="--dd:2.4s" d="M232 134 C224 124 224 112 232 102 C240 112 240 124 232 134 Z"/>
+          <text x="196" y="176" font-family="Caveat,cursive" font-size="17" fill="#6e665a" class="fade" style="--dd:2.6s">la giusta quantità</text>
+          <text x="40" y="236" font-family="Caveat,cursive" font-size="16" fill="#6e665a" class="fade" style="--dd:2.8s">radici · 3 profondità</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="stampcov reveal inview" aria-hidden="true">
+    <svg viewBox="0 0 100 100">
+      <path class="draw r" pathLength="1" style="--du:1.8s;--dd:.8s" d="M50 6 C74 6 94 26 94 50 C94 74 74 94 50 94 C26 94 6 74 6 50 C6 26 26 6 50 6 Z"/>
+      <path class="draw r" pathLength="1" style="--du:1.4s;--dd:1.4s;stroke-width:1" d="M50 24 C65 24 76 35 76 50 C76 65 65 76 50 76 C35 76 24 65 24 50 C24 35 35 24 50 24 Z"/>
+      <text style="font-family:var(--serif);font-size:8px;letter-spacing:1.4px" fill="#a4502f"><textPath href="#stampArc">PROTOTIPO FUNZIONANTE · TRL 6 · BOLOGNA ·</textPath></text>
+      <path class="draw r" pathLength="1" style="--dd:2s" d="M50 62 C42 56 42 44 50 36 C58 44 58 56 50 62 Z"/>
+    </svg>
+  </div>
+
+  <a class="cue" href="#problema">scopri di più
+    <svg viewBox="0 0 24 40" aria-hidden="true">
+      <path class="draw" pathLength="1" d="M12 2 C17 8 7 14 12 20 C17 26 7 32 12 38"/>
+      <path class="draw" pathLength="1" d="M7 32 L12 39 L17 31"/>
+    </svg>
+  </a>
+  <div class="fold" aria-hidden="true"></div>
+</header>
+
+<main id="main">
+<!-- ================= 01 PROBLEMA ================= -->
+<section id="problema" aria-labelledby="h-problema">
+  <span class="pageno">p. 2</span>
+  <div class="shead reveal">
+    <span class="snum" aria-hidden="true"><svg viewBox="0 0 52 52"><path class="draw" pathLength="1" style="stroke:rgba(42,38,34,.5)" d="M26 5 C38 4 48 14 47 26 C46 38 37 47 26 47 C14 47 5 38 5 26 C5 14 14 6 26 5 Z"/></svg><span>01</span></span>
+    <h2 id="h-problema">Cento anni fa, per sapere quando irrigare, un contadino toccava la terra.</h2>
+    <svg class="uline" viewBox="0 0 240 16" aria-hidden="true"><path class="draw" pathLength="1" d="M3 7 C45 3 90 12 135 7 C180 3 212 5 237 8"/><path class="draw p" pathLength="1" style="--dd:.5s" d="M10 12 C60 8 120 14 190 10 C210 9 226 10 233 11"/></svg>
+    <span class="snote">lo fa ancora oggi</span>
+  </div>
+  <p class="lede">Lo dicono i 25 agricoltori che abbiamo intervistato. Lo conferma Tommaso di Cascina Fraschina. I dati satellitari sono troppo imprecisi per i campi piccoli; i sensori professionali costano più di 500 € l'uno, un investimento insostenibile per una PMI agricola. E basta una stagione storta per far saltare i conti.</p>
+  <div class="num-grid">
+    <article class="note numcard lift reveal">
+      <span class="tape" aria-hidden="true"></span>
+      <p class="big">70%</p>
+      <p class="lab">dell'acqua potabile</p>
+      <p>usata in agricoltura in Italia</p>
+    </article>
+    <article class="note r2 numcard lift reveal">
+      <span class="tape tc" aria-hidden="true"></span>
+      <p class="big">500<small> €+</small></p>
+      <p class="lab">costo minimo</p>
+      <p>per un sensore professionale esistente</p>
+    </article>
+    <article class="note r3 numcard lift reveal">
+      <span class="tape tcr" aria-hidden="true"></span>
+      <p class="big">40%</p>
+      <p class="lab">acqua sprecata</p>
+      <p>ogni singola stagione irrigua</p>
+    </article>
+  </div>
+  <blockquote class="pull reveal">Non è una questione di volontà. È una questione di accessibilità.</blockquote>
+</section>
+
+<!-- ================= 02 SOLUZIONE ================= -->
+<section id="soluzione" aria-labelledby="h-soluzione">
+  <span class="pageno">p. 3</span>
+  <div class="shead reveal">
+    <span class="snum" aria-hidden="true"><svg viewBox="0 0 52 52"><path class="draw" pathLength="1" style="stroke:rgba(42,38,34,.5)" d="M26 5 C38 4 48 14 47 26 C46 38 37 47 26 47 C14 47 5 38 5 26 C5 14 14 6 26 5 Z"/></svg><span>02</span></span>
+    <h2 id="h-soluzione">Non è solo un sensore. È un sistema decisionale autonomo.</h2>
+    <svg class="uline" viewBox="0 0 240 16" aria-hidden="true"><path class="draw" pathLength="1" d="M3 7 C45 3 90 12 135 7 C180 3 212 5 237 8"/><path class="draw p" pathLength="1" style="--dd:.5s" d="M10 12 C60 8 120 14 190 10 C210 9 226 10 233 11"/></svg>
+    <span class="snote">sul tuo impianto esistente</span>
+  </div>
+  <p class="lede">LESA misura la ground-truth: l'umidità reale a diverse profondità, esattamente dove vivono le radici. Il nostro hub integra un algoritmo che legge la pressione atmosferica ogni 5 secondi e costruisce una previsione barometrica iper-locale. Il risultato è una singola, semplice notifica.</p>
+
+  <div class="spec-grid">
+    <article class="spec note lift reveal">
+      <span class="tape" aria-hidden="true"></span>
+      <div class="lab"><span class="no">Campione 01</span><span class="ref">nel suolo</span></div>
+      <h3>Sensore multi-profondità <i>misura dove vivono le radici</i></h3>
+      <div class="drawing" aria-hidden="true">
+        <svg viewBox="0 0 200 130" filter="url(#wob)">
+          <path class="draw p" pathLength="1" d="M14 40 C60 36 120 44 186 40 M20 72 C70 68 130 76 180 72 M24 104 C74 100 130 108 176 104"/>
+          <path class="draw" pathLength="1" style="--dd:.4s;stroke-width:2.2" d="M100 10 L101 124"/>
+          <path class="draw" pathLength="1" style="--dd:.8s" d="M92 10 h16 v-6 h-16 Z"/>
+          <path class="draw g" pathLength="1" style="--dd:1.2s;stroke-width:2.2" d="M92 56 h16 M92 88 h16 M92 118 h16"/>
+          <text x="112" y="60" font-family="Caveat,cursive" font-size="15" fill="#6e665a" class="fade" style="--dd:1.5s">−20 cm</text>
+          <text x="112" y="92" font-family="Caveat,cursive" font-size="15" fill="#6e665a" class="fade" style="--dd:1.7s">−40 cm</text>
+          <text x="112" y="122" font-family="Caveat,cursive" font-size="15" fill="#6e665a" class="fade" style="--dd:1.9s">−60 cm</text>
+        </svg>
+      </div>
+      <p class="nline">Misura l'umidità del suolo dove vivono le radici, non in superficie. Ground-truth reale, non una stima dal satellite.</p>
+    </article>
+
+    <article class="spec note r2 lift reveal">
+      <span class="tape tc" aria-hidden="true"></span>
+      <div class="lab"><span class="no">Campione 02</span><span class="ref">4 km in campo aperto</span></div>
+      <h3>LoRaWAN <i>comunica senza Wi-Fi</i></h3>
+      <div class="drawing" aria-hidden="true">
+        <svg viewBox="0 0 200 130" filter="url(#wob)">
+          <path class="draw" pathLength="1" style="stroke-width:2" d="M40 120 L42 50"/>
+          <path class="draw" pathLength="1" style="--dd:.4s" d="M30 50 h24 M34 44 h16 M38 38 h8"/>
+          <path class="draw r" pathLength="1" style="--dd:.8s;stroke-width:1.3" d="M58 70 C66 62 66 50 58 42 M70 78 C84 66 84 46 70 34 M82 86 C102 70 102 42 82 26"/>
+          <path class="draw" pathLength="1" style="--dd:1.2s;stroke-width:2" d="M164 120 L165 70"/>
+          <path class="draw" pathLength="1" style="--dd:1.4s" d="M156 70 h18 v-14 h-18 Z"/>
+          <path class="draw p" pathLength="1" style="--dd:1.6s" d="M50 112 C90 108 130 114 156 110"/>
+          <text x="86" y="124" font-family="Caveat,cursive" font-size="16" fill="#6e665a" class="fade" style="--dd:1.8s">4 km</text>
+        </svg>
+      </div>
+      <p class="nline">Comunicazione fino a 4 km in campo aperto. Nessun Wi-Fi, nessun abbonamento internet.</p>
+    </article>
+
+    <article class="spec note r3 lift reveal">
+      <span class="tape tcr" aria-hidden="true"></span>
+      <div class="lab"><span class="no">Campione 03</span><span class="ref">decide da solo</span></div>
+      <h3>Hub intelligente <i>previsione barometrica iper-locale</i></h3>
+      <div class="drawing" aria-hidden="true">
+        <svg viewBox="0 0 200 130" filter="url(#wob)">
+          <path class="draw" pathLength="1" d="M60 110 C58 80 62 50 100 46 C138 50 142 80 140 110 Z"/>
+          <path class="draw" pathLength="1" style="--dd:.5s" d="M72 100 C74 78 86 66 100 66 C114 66 126 78 128 100"/>
+          <path class="draw p" pathLength="1" style="--dd:.9s" d="M80 92 l3 -5 M92 78 l2 -5 M108 78 l-2 -5 M120 92 l-3 -5"/>
+          <path class="draw r" pathLength="1" style="--dd:1.2s;stroke-width:2" d="M100 100 L116 76"/>
+          <path class="draw b" pathLength="1" style="--dd:1.5s" d="M150 36 C144 24 160 16 168 24 C174 12 196 16 194 30 C204 30 206 44 194 44 L154 44 C146 44 144 36 150 36 Z"/>
+          <text x="40" y="124" font-family="Caveat,cursive" font-size="15" fill="#6e665a" class="fade" style="--dd:1.8s">ogni 5 secondi</text>
+        </svg>
+      </div>
+      <p class="nline">Algoritmo locale con previsione barometrica iper-locale. Decisioni autonome, in tempo reale, anche senza connessione.</p>
+    </article>
+  </div>
+
+  <div class="tags reveal" aria-label="Esempi di notifica">
+    <span>la notifica che ricevi:</span>
+    <span class="tag g">● Irriga ora</span>
+    <span>oppure</span>
+    <span class="tag b">● Aspetta. Pioverà domani.</span>
+  </div>
+
+  <div class="note ledger-card reveal">
+    <p class="ledger-hint">architettura dual-intelligence, in numeri</p>
+    <div class="ledger-wrap">
+      <table class="ledger">
+        <thead><tr><th>Valore</th><th>Che cosa</th><th>Nota</th></tr></thead>
+        <tbody>
+          <tr><td class="m">4 km</td><td>portata LoRaWAN in campo aperto</td><td class="note">senza Wi-Fi</td></tr>
+          <tr><td class="m">&lt; 50 €</td><td>costo per unità a scala produttiva</td><td class="note">contro i 500 € di oggi</td></tr>
+          <tr><td class="m">10×</td><td>più economico dei competitor</td><td class="note"></td></tr>
+          <tr><td class="m">7 gg</td><td>autonomia senza sole (batteria)</td><td class="note">il sole la alimenta</td></tr>
+          <tr><td class="m">40%</td><td>riduzione potenziale dello spreco idrico</td><td class="note">da validare sul campo</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 CASCINA FRASCHINA ================= -->
+<section id="fraschina" aria-labelledby="h-fraschina">
+  <span class="pageno">p. 4</span>
+  <div class="shead reveal">
+    <span class="snum" aria-hidden="true"><svg viewBox="0 0 52 52"><path class="draw" pathLength="1" style="stroke:rgba(42,38,34,.5)" d="M26 5 C38 4 48 14 47 26 C46 38 37 47 26 47 C14 47 5 38 5 26 C5 14 14 6 26 5 Z"/></svg><span>03</span></span>
+    <h2 id="h-fraschina">Con loro condurremo il primo test reale.</h2>
+    <svg class="uline" viewBox="0 0 240 16" aria-hidden="true"><path class="draw" pathLength="1" d="M3 7 C45 3 90 12 135 7 C180 3 212 5 237 8"/><path class="draw p" pathLength="1" style="--dd:.5s" d="M10 12 C60 8 120 14 190 10 C210 9 226 10 233 11"/></svg>
+    <span class="snote">il primo tester</span>
+  </div>
+  <div class="study-grid">
+    <article class="prose reveal">
+      <p class="first">Tommaso e i suoi 4 colleghi coltivano 10 ettari di terra biologica a Milano. Per decidere quando irrigare, si affidano ancora al proprio istinto. Non per mancanza di volontà, ma perché nessuno ha ancora creato uno strumento alla loro portata.</p>
+      <figure class="note fig lift">
+        <span class="tape" aria-hidden="true"></span>
+        <img src="assets/cascina.jpg" alt="Il gruppo di Cascina Fraschina Bio sul trattore" width="640" height="408" loading="lazy">
+        <figcaption>Cascina Fraschina Bio — Milano — 5 giovani ragazzi — 10 ha</figcaption>
+      </figure>
+      <h3 style="font-family:var(--serif);font-weight:560;font-size:22px;margin:10px 0 14px">Perché rappresentano il cliente ideale</h3>
+      <ol class="principles">
+        <li><b>Giovani e ambiziosi</b>5 ragazzi che hanno scelto l'agricoltura con consapevolezza. Hanno fame di innovazione e non hanno paura di provare.</li>
+        <li><b>LESA parla la loro lingua</b>Il cambio generazionale è a nostro favore: i nuovi agricoltori sono nati digitali e cercano strumenti digitali per il loro lavoro.</li>
+        <li><b>Scala rappresentativa</b>10 ettari è la scala tipica delle PMI agricole italiane. Il successo con Tommaso è la prova che LESA funziona dove serve.</li>
+        <li><b>Biologico e consapevole</b>Il cliente LESA crede nella sostenibilità. Risparmiare acqua non è solo efficienza economica: è un valore.</li>
+      </ol>
+    </article>
+    <aside class="marginals reveal" aria-label="Note a margine">
+      <p class="marginal">
+        <svg viewBox="0 0 60 30" aria-hidden="true"><path class="draw r" pathLength="1" d="M4 24 C20 20 36 12 56 4 M56 4 l-9 1 M56 4 l-2 8"/></svg>
+        «Se lo conosceste, vi parlerebbe sicuramente di come questo è un problema vero. Non un problema suo, ma di tanti come lui.»
+      </p>
+      <p class="marginal">1–50 ettari: piccole e medie aziende agricole, imprenditori under 55. Si parte dal biologico italiano.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ================= 04 MERCATO ================= -->
+<section id="mercato" aria-labelledby="h-mercato">
+  <span class="pageno">p. 5</span>
+  <div class="shead reveal">
+    <span class="snum" aria-hidden="true"><svg viewBox="0 0 52 52"><path class="draw" pathLength="1" style="stroke:rgba(42,38,34,.5)" d="M26 5 C38 4 48 14 47 26 C46 38 37 47 26 47 C14 47 5 38 5 26 C5 14 14 6 26 5 Z"/></svg><span>04</span></span>
+    <h2 id="h-mercato">Il momento è quello giusto.</h2>
+    <svg class="uline" viewBox="0 0 240 16" aria-hidden="true"><path class="draw" pathLength="1" d="M3 7 C45 3 90 12 135 7 C180 3 212 5 237 8"/><path class="draw p" pathLength="1" style="--dd:.5s" d="M10 12 C60 8 120 14 190 10 C210 9 226 10 233 11"/></svg>
+    <span class="snote">piccoli campi, un grande mercato</span>
+  </div>
+  <div class="arrowcard reveal">
+    <article class="note numcard lift">
+      <p class="big">3,96<small> Mld €</small></p>
+      <p class="lab">oggi</p>
+      <p>mercato dell'agricoltura digitale</p>
+    </article>
+    <svg viewBox="0 0 60 30" aria-hidden="true"><path class="draw r" pathLength="1" style="stroke-width:2" d="M4 16 C20 12 36 18 54 14 M54 14 l-8 -6 M54 14 l-7 7"/></svg>
+    <article class="note r2 numcard lift">
+      <p class="big">9<small> Mld €</small></p>
+      <p class="lab">proiezione 1–5 anni</p>
+      <p>un mercato che raddoppia, e l'Europa che spinge nella nostra direzione</p>
+    </article>
+  </div>
+  <div class="rows reveal">
+    <div class="row"><span class="when">01</span><div><h3>Crescita di mercato</h3><p>Da 4 miliardi oggi a 9 miliardi domani. Il settore agritech cresce a velocità sostenuta.</p></div></div>
+    <div class="row"><span class="when">02</span><div><h3>Normativa idrica UE</h3><p>La Water Framework Directive impone standard per la riduzione dello spreco idrico. Le PMI devono adeguarsi.</p></div></div>
+    <div class="row"><span class="when">03</span><div><h3>Agevolazioni fiscali</h3><p>Credito d'imposta 4.0, Sabatini Green, bandi.</p></div></div>
+    <div class="row"><span class="when">04</span><div><h3>Cambio generazionale</h3><p>I nuovi agricoltori cercano soluzioni digitali.</p></div></div>
+  </div>
+  <p class="fonti">fonti: Istat, Mordor Intelligence, MarketsandMarkets</p>
+</section>
+
+<!-- ================= 05 ROADMAP ================= -->
+<section id="roadmap" aria-labelledby="h-roadmap">
+  <span class="pageno">p. 6</span>
+  <div class="shead reveal">
+    <span class="snum" aria-hidden="true"><svg viewBox="0 0 52 52"><path class="draw" pathLength="1" style="stroke:rgba(42,38,34,.5)" d="M26 5 C38 4 48 14 47 26 C46 38 37 47 26 47 C14 47 5 38 5 26 C5 14 14 6 26 5 Z"/></svg><span>05</span></span>
+    <h2 id="h-roadmap">Non stiamo immaginando questo futuro. Lo stiamo costruendo.</h2>
+    <svg class="uline" viewBox="0 0 240 16" aria-hidden="true"><path class="draw" pathLength="1" d="M3 7 C45 3 90 12 135 7 C180 3 212 5 237 8"/><path class="draw p" pathLength="1" style="--dd:.5s" d="M10 12 C60 8 120 14 190 10 C210 9 226 10 233 11"/></svg>
+    <span class="snote">siamo bravi, ma ci serve una mano</span>
+  </div>
+  <div class="road-grid">
+    <div class="note ledger-card reveal" style="margin-top:0">
+      <p class="ledger-hint">18 mesi per mettere radici</p>
+      <div class="ledger-wrap">
+        <table class="ledger">
+          <thead><tr><th>Quando</th><th>Fase</th><th>Che cosa</th></tr></thead>
+          <tbody>
+            <tr><td class="m">2025 – 02/2026</td><td class="w">Validazione</td><td><ul><li>Validazione EMC — ITAINNOVA, Spagna</li><li>Pilot: Cascina Fraschina Bio</li></ul></td></tr>
+            <tr><td class="m">03 – 04/2026</td><td class="w">Struttura</td><td><ul><li>Implementare il team</li><li>Brevetto</li><li>SRL innovativa</li></ul></td></tr>
+            <tr><td class="m">Q3 2027</td><td class="w">Mercato Italia</td><td><ul><li>Entrata sul mercato italiano</li></ul></td></tr>
+            <tr><td class="m">2030</td><td class="w">Espansione</td><td><ul><li>Mercato europeo</li><li>Mercato algerino</li><li>Collaborazione con ONG in Kenya</li></ul></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <aside class="note r2 awards lift reveal">
+      <span class="tape" aria-hidden="true"></span>
+      <h3>Riconoscimenti</h3>
+      <ul>
+        <li><svg viewBox="0 0 25 25" aria-hidden="true"><path class="bx" d="M4 5 C10 3 18 4 21 4 C22 10 21 17 21 21 C15 22 8 21 4 21 C3 15 4 9 4 5 Z"/><path class="chk" d="M6 13 L11 18 L20 7"/></svg>1° Premio UNIBO Makerspace</li>
+        <li><svg viewBox="0 0 25 25" aria-hidden="true"><path class="bx" d="M4 5 C10 3 18 4 21 4 C22 10 21 17 21 21 C15 22 8 21 4 21 C3 15 4 9 4 5 Z"/><path class="chk" d="M6 13 L11 18 L20 7"/></svg>Falling Walls Lab Milan</li>
+        <li><svg viewBox="0 0 25 25" aria-hidden="true"><path class="bx" d="M4 5 C10 3 18 4 21 4 C22 10 21 17 21 21 C15 22 8 21 4 21 C3 15 4 9 4 5 Z"/><path class="chk" d="M6 13 L11 18 L20 7"/></svg>WIPO Green Publication</li>
+      </ul>
+      <p class="ledger-hint" style="margin:14px 0 0">domanda di brevetto in preparazione — Bugnion S.p.A.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ================= 06 TEAM ================= -->
+<section id="team" aria-labelledby="h-team">
+  <span class="pageno">p. 7</span>
+  <div class="shead reveal">
+    <span class="snum" aria-hidden="true"><svg viewBox="0 0 52 52"><path class="draw" pathLength="1" style="stroke:rgba(42,38,34,.5)" d="M26 5 C38 4 48 14 47 26 C46 38 37 47 26 47 C14 47 5 38 5 26 C5 14 14 6 26 5 Z"/></svg><span>06</span></span>
+    <h2 id="h-team">Le persone che fanno crescere LESA.</h2>
+    <svg class="uline" viewBox="0 0 240 16" aria-hidden="true"><path class="draw" pathLength="1" d="M3 7 C45 3 90 12 135 7 C180 3 212 5 237 8"/><path class="draw p" pathLength="1" style="--dd:.5s" d="M10 12 C60 8 120 14 190 10 C210 9 226 10 233 11"/></svg>
+    <span class="snote">chi siamo</span>
+  </div>
+  <div class="team-grid">
+    <article class="person reveal">
+      <figure class="note portrait lift">
+        <span class="tape" aria-hidden="true"></span>
+        <img src="assets/angela.jpg" alt="Angela Ferrante" width="640" height="420" loading="lazy">
+      </figure>
+      <div>
+        <p class="sig">Angela Ferrante</p>
+        <p class="role">Co-founder &amp; CEO</p>
+        <p class="bio">Chef, F&amp;B manager, manager d'hotel, studentessa di Management &amp; Marketing. Oggi porta LESA sul mercato.</p>
+      </div>
+    </article>
+    <article class="person reveal">
+      <figure class="note r2 portrait r2 lift">
+        <span class="tape tcr" aria-hidden="true"></span>
+        <img src="assets/sayed.jpg" alt="Sayed El Moutaouakel Berghout" width="640" height="420" loading="lazy">
+      </figure>
+      <div>
+        <p class="sig">Sayed El Moutaouakel Berghout</p>
+        <p class="role">Co-founder &amp; CTO</p>
+        <p class="bio">Studente di Fisica Applicata, assistente ricercatore in oncologia e radioterapia. Oggi costruisce l'intelligenza di LESA.</p>
+      </div>
+    </article>
+  </div>
+  <p class="fonti">con noi: Andrea Simone, agronomo consulente · Martina Guerrini, product &amp; graphics designer</p>
+</section>
+
+<!-- ================= 07 PIANTAMI ================= -->
+<section id="piantami" aria-labelledby="h-piantami">
+  <span class="pageno">p. 8</span>
+  <div class="shead reveal">
+    <span class="snum" aria-hidden="true"><svg viewBox="0 0 52 52"><path class="draw" pathLength="1" style="stroke:rgba(42,38,34,.5)" d="M26 5 C38 4 48 14 47 26 C46 38 37 47 26 47 C14 47 5 38 5 26 C5 14 14 6 26 5 Z"/></svg><span>07</span></span>
+    <h2 id="h-piantami">LESA × Piantami.</h2>
+    <svg class="uline" viewBox="0 0 240 16" aria-hidden="true"><path class="draw" pathLength="1" d="M3 7 C45 3 90 12 135 7 C180 3 212 5 237 8"/><path class="draw p" pathLength="1" style="--dd:.5s" d="M10 12 C60 8 120 14 190 10 C210 9 226 10 233 11"/></svg>
+    <span class="snote">il nostro primo partner</span>
+  </div>
+  <p class="lede">Due realtà nate dall'incontro tra tecnologia e natura. Piantami crea superfici bio-attive brevettate contenenti semi vivi. Packaging, etichette, shopper: dopo l'utilizzo, si piantano. Non generano rifiuti, generano vita.</p>
+  <blockquote class="pull reveal">«Cambiamo il destino del packaging, affinché dopo aver servito un prodotto possa servire anche il pianeta.»<cite>Piantami® — Paper back to Plant</cite></blockquote>
+
+  <div class="spec-grid">
+    <article class="spec note lift reveal">
+      <span class="tape" aria-hidden="true"></span>
+      <div class="lab"><span class="no">Dalla carta alla terra</span></div>
+      <p class="nline">Il packaging di Piantami finisce nel suolo e germoglia. Ma una pianta ha bisogno di acqua, nella giusta quantità, al momento giusto. È qui che entra LESA.</p>
+    </article>
+    <article class="spec note r2 lift reveal">
+      <span class="tape tc" aria-hidden="true"></span>
+      <div class="lab"><span class="no">Stessi valori, scale diverse</span></div>
+      <p class="nline">Piantami democratizza la sostenibilità per i brand. LESA la porta agli agricoltori. Entrambi credono che la natura non debba essere un lusso riservato a pochi.</p>
+    </article>
+    <article class="spec note r3 lift reveal">
+      <span class="tape tcr" aria-hidden="true"></span>
+      <div class="lab"><span class="no">Un ciclo completo</span></div>
+      <p class="nline">Piantami chiude il ciclo del packaging. LESA chiude il ciclo dell'acqua. Insieme costruiamo un'agricoltura in cui niente viene sprecato: né la carta, né l'acqua.</p>
+    </article>
+  </div>
+
+  <a class="clicca" href="https://piantami.com" target="_blank" rel="noopener">
+    <svg viewBox="0 0 44 34" aria-hidden="true"><path class="draw r" pathLength="1" d="M4 28 C14 20 24 12 40 6 M40 6 l-9 0 M40 6 l-1 9"/></svg>
+    scopri Piantami: clicca qui
+  </a>
+  <p class="marginal reveal" style="max-width:62ch;margin-top:26px">«Non è una coincidenza che ci siamo trovati. Lavoriamo entrambi per lo stesso futuro, partendo da angolazioni diverse.» — Angela Ferrante</p>
+</section>
+
+<!-- ================= 08 PRENOTA ================= -->
+<section id="prenota" aria-labelledby="h-prenota">
+  <span class="pageno">p. 9</span>
+  <div class="shead reveal">
+    <span class="snum" aria-hidden="true"><svg viewBox="0 0 52 52"><path class="draw" pathLength="1" style="stroke:rgba(42,38,34,.5)" d="M26 5 C38 4 48 14 47 26 C46 38 37 47 26 47 C14 47 5 38 5 26 C5 14 14 6 26 5 Z"/></svg><span>08</span></span>
+    <h2 id="h-prenota">Parliamoci.</h2>
+    <svg class="uline" viewBox="0 0 240 16" aria-hidden="true"><path class="draw" pathLength="1" d="M3 7 C45 3 90 12 135 7 C180 3 212 5 237 8"/><path class="draw p" pathLength="1" style="--dd:.5s" d="M10 12 C60 8 120 14 190 10 C210 9 226 10 233 11"/></svg>
+    <span class="snote">prenota una chiamata</span>
+  </div>
+  <p class="lede">Sei un agricoltore, un investitore, o semplicemente curioso? Scegli un giorno e lasciaci i tuoi contatti: ti richiamiamo noi.</p>
+  <form class="note form-card reveal" id="prenota-form" novalidate="false">
+    <span class="tape" aria-hidden="true"></span>
+    <div class="form-grid">
+      <div>
+        <h3>1. Scegli una data</h3>
+        <label for="f-data">Giorno preferito *</label>
+        <input class="big-date" id="f-data" name="data" type="date" required>
+        <label for="f-msg">Raccontaci di te (opzionale)</label>
+        <textarea id="f-msg" name="msg" placeholder="Sono un agricoltore / investitore / curioso…"></textarea>
+      </div>
+      <div>
+        <h3>2. I tuoi contatti</h3>
+        <label for="f-nome">Nome e cognome *</label>
+        <input id="f-nome" name="nome" type="text" autocomplete="name" placeholder="Nome Cognome" required>
+        <label for="f-email">Email *</label>
+        <input id="f-email" name="email" type="email" autocomplete="email" placeholder="nome@email.com" required>
+        <label for="f-tel">Telefono (opzionale)</label>
+        <input id="f-tel" name="tel" type="tel" autocomplete="tel" placeholder="+39 …">
+      </div>
+    </div>
+    <button class="btn" type="submit">Prenota la chiamata →</button>
+    <p class="form-foot">Si aprirà il tuo programma di posta con la richiesta già compilata. Preferisci scriverci direttamente? <a href="mailto:info@ivett.it">info@ivett.it</a></p>
+  </form>
+</section>
+</main>
+
+<!-- ================= RETRO ================= -->
+<footer class="back" id="back">
+  <div class="sheet">
+    <p class="fin reveal">keep in touch.</p>
+    <svg class="fin-u reveal" viewBox="0 0 180 20" aria-hidden="true">
+      <path class="draw r" pathLength="1" style="--du:1.8s" d="M4 10 C40 4 70 16 100 9 C130 4 156 8 176 10"/>
+    </svg>
+    <p class="contacts reveal">
+      <a href="mailto:info@ivett.it">info@ivett.it</a>
+      <a href="tel:+393289513503">+39 328 951 3503</a>
+      <span>Bologna, Italia</span>
+    </p>
+    <p class="belongs reveal">LESA — Low-cost Soil Sensor Array · Angela Ferrante &amp; Sayed El Moutaouakel Berghout</p>
+    <div class="back-bar reveal">
+      <span>© 2026 LESA. Tutti i diritti riservati.</span>
+      <a class="totop" href="#cover">torna all'inizio ↑</a>
+    </div>
+  </div>
+</footer>
+</div>
+
+<script>
+(function(){
+"use strict";
+var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('inview');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -6% 0px'});
+$$('.reveal').forEach(function(el){if(RM)el.classList.add('inview');else io.observe(el);});
+var links=$$('#tabs a');
+var spy=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){var on=a.getAttribute('href')==='#'+e.target.id;a.classList.toggle('on',on);if(on)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current');});}});},{rootMargin:'-40% 0px -55% 0px'});
+links.forEach(function(a){var s=document.querySelector(a.getAttribute('href'));if(s)spy.observe(s);});
+/* prenota: the form composes an email to info@ivett.it in the visitor's mail client */
+var f=document.getElementById('prenota-form');
+f.data.min=new Date().toISOString().slice(0,10);
+f.addEventListener('submit',function(e){
+  e.preventDefault();
+  var giorno=new Date(f.data.value+'T12:00').toLocaleDateString('it-IT',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  var subj='Prenotazione chiamata LESA — '+f.nome.value.trim()+' — '+giorno;
+  var body='Nome: '+f.nome.value.trim()+'\nEmail: '+f.email.value.trim()+'\nTelefono: '+(f.tel.value.trim()||'—')+'\nGiorno preferito: '+giorno+'\n\n'+f.msg.value.trim();
+  location.href=f.dataset.mailto='mailto:info@ivett.it?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
+});
+})();
+</script>
+</body>
+</html>
