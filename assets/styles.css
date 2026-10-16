@@ -209,3 +209,9 @@ footer{display:grid;grid-template-columns:1fr 1fr}
 .ft-r p{max-width:none}
 @media(max-width:600px){section{padding:72px 0}.hero img{width:300px}.ft-l{padding:56px 24px}.ft-r img{width:260px}.cal{width:100%}}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+
+/* Keep supplied images at their original aspect ratio at every breakpoint. */
+.nav .logo{flex-shrink:0}
+.nav .logo img,.hero img,.ft-r img{aspect-ratio:865 / 315;object-fit:contain;height:auto}
+.photo img{aspect-ratio:675 / 672;object-fit:contain;height:auto}
+.team>img{width:100%;min-width:0;height:auto;aspect-ratio:1534 / 1024;object-fit:contain;align-self:start}
